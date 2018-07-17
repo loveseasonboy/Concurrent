@@ -9,7 +9,12 @@ import com.annotion.NotThreadSafe;
 public class UnsafeSequence {
     private int value = 0;
 
+//    public synchronized int getNext() {
+//        System.err.println(Thread.currentThread().getName());
+//        return ++value;
+//    }
     public int getNext() {
-        return value++;
+        System.err.println(Thread.currentThread().getName());
+        return ++value;
     }
 }
